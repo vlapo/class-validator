@@ -126,13 +126,15 @@ export class Validator {
             case ValidationTypes.IS_NOT_IN:
                 return this.isNotIn(value, metadata.constraints[0]);
 
-            /* type checkers */
+            /* coordinates checkers */
             case ValidationTypes.IS_LATLONG:
                 return this.isLatLong(value);
             case ValidationTypes.IS_LATITUDE:
                 return this.isLatitude(value);
             case ValidationTypes.IS_LONGITUDE:
                 return this.isLongitude(value);
+
+            /* type checkers */
             case ValidationTypes.IS_BOOLEAN:
                 return this.isBoolean(value);
             case ValidationTypes.IS_DATE:
@@ -343,7 +345,6 @@ export class Validator {
     * Checks if a given value is a latitude.
     */
     isLatLong(value: any): boolean {
-
         return this.validatorJs.isLatLong(value);
     }
 
